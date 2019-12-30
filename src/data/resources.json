@@ -1,0 +1,387 @@
+[
+  {
+    "identify": "template",
+    "name": "template",
+    "icon": "",
+    "description": "",
+    "unlock": "",
+    "hide": "",
+    "influence": {
+      "item.void": 0
+    },
+    "actions": [
+      {
+        "title": "",
+        "requirement": "",
+        "cost": {
+        },
+        "result": {
+        }
+      }
+    ]
+  },
+  {
+    "identify": "tutorial",
+    "name": "Tutorial",
+    "icon": "💬",
+    "description": "This is tutorial, follow the instructions bellow to proceed.",
+    "unlock": "game.item.tutorial < 10",
+    "hide": "game.item.tutorial >= 10",
+    "actions": [
+      {
+        "title": "Click to continue tutorial",
+        "requirement": "game.item.tutorial == 0",
+        "cost": {},
+        "result": {
+          "item.tutorial": 1
+        }
+      },
+      {
+        "title": "When you have 10 point of Tutorial you will start to begin game",
+        "requirement": "game.item.tutorial == 1",
+        "cost": {},
+        "result": {
+          "item.tutorial": 1
+        }
+      },
+      {
+        "title": "Continue on, we are almost there",
+        "requirement": "game.item.tutorial >= 2",
+        "cost": {},
+        "result": {
+          "item.tutorial": 1
+        }
+      },
+      {
+        "title": "Skip tutorials",
+        "requirement": "true",
+        "cost": {},
+        "result": {
+          "item.tutorial": 10
+        }
+      }
+    ]
+  },
+  {
+    "identify": "story",
+    "name": "Story",
+    "icon": "💬",
+    "description": "",
+    "unlock": "game.item.light > 10",
+    "actions": [
+      {
+        "title": "You find your self in an Eternal night forest without sunlight. We need more light to explore",
+        "requirement": "game.item.story == 0",
+        "cost": {
+          "item.light": 50
+        },
+        "result": {
+          "item.story": 1
+        }
+      },
+      {
+        "title": "Now you are prepared to learn more, let's start to research",
+        "requirement": "game.item.story == 1 && game.item.metal > 0",
+        "cost": {
+          "item.light": 1000
+        },
+        "result": {
+          "item.story": 1
+        }
+      },
+      {
+        "title": "Work you have done inspired you. You get some knowledge.",
+        "requirement": "game.item.story == 2 && game.item.paper > 0",
+        "cost": {
+        },
+        "result": {
+          "item.story": 1,
+          "item.knowledge": 10
+        }
+      }
+    ]
+  },
+  {
+    "identify": "knowledge",
+    "name": "knowledge",
+    "icon": "🧠",
+    "description": "",
+    "unlock": "game.item.knowledge > 0",
+    "actions": [
+      {
+        "title": "",
+        "requirement": "",
+        "cost": {
+        },
+        "result": {
+        }
+      }
+    ]
+  },
+  {
+    "identify": "wood",
+    "name": "wood",
+    "icon": "🌳",
+    "description": "just some wood branches.",
+    "unlock": "game.item.tutorial >= 10",
+    "actions": [
+      {
+        "title": "collect wood",
+        "requirement": "true",
+        "cost": {},
+        "result": {
+          "item.wood": 1
+        }
+      },
+      {
+        "title": "chop trees",
+        "requirement": "game.item.tools > 0",
+        "cost": {
+          "item.tools": 0.1
+        },
+        "result": {
+          "item.wood": 10
+        }
+      }
+    ]
+  },
+  {
+    "identify": "stone",
+    "name": "stone",
+    "icon": "⛰",
+    "description": "rocks",
+    "unlock": "game.item.territory > 0",
+    "actions": [
+      {
+        "title": "collect rock",
+        "requirement": "true",
+        "cost": {},
+        "result": {
+          "item.stone": 1
+        }
+      },
+      {
+        "title": "mine ores",
+        "requirement": "game.item.tools > 0",
+        "cost": {
+          "item.tools": 0.1
+        },
+        "result": {
+          "item.stone": 20,
+          "item.raw_ore": 1
+        }
+      }
+    ]
+  },
+  {
+    "identify": "fire",
+    "name": "fire",
+    "icon": "🔥",
+    "description": "generates heat and light",
+    "unlock": "game.item.wood >= 10",
+    "actions": [
+      {
+        "title": "start a fire",
+        "requirement": "true",
+        "cost": {
+          "item.wood": 10
+        },
+        "result": {
+          "item.fire": 1
+        }
+      },
+      {
+        "title": "feed the fire",
+        "requirement": "game.item.fire >= 1",
+        "cost": {
+          "item.wood": 80,
+          "item.fire": 1
+        },
+        "result": {
+          "item.fire": 10
+        }
+      }
+    ],
+    "influence": {
+      "item.heat": 1,
+      "item.light": 1,
+      "item.fire": -0.05
+    }
+  },
+  {
+    "identify": "cosmos",
+    "name": "cosmos",
+    "icon": "🌌",
+    "description": "The cosmos absorbs heat and light",
+    "unlock": "game.item.wood >= 10",
+    "actions": [],
+    "influence": {
+      "item.heat": -0.2,
+      "item.light": -0.1,
+      "item.fire": -0.01
+    }
+  },
+  {
+    "identify": "heat",
+    "name": "heat",
+    "icon": "♨",
+    "description": "It's an energy source!",
+    "unlock": "game.item.fire > 0",
+    "actions": [],
+    "influence": {
+      "item.heat": -0.05
+    }
+  },
+  {
+    "identify": "light",
+    "name": "light",
+    "icon": "💡",
+    "description": "You can only work with light",
+    "unlock": "game.item.fire > 0",
+    "actions": []
+  },
+  {
+    "identify": "territory",
+    "name": "territory",
+    "icon": "🌍",
+    "description": "Your occupied land",
+    "unlock": "game.item.story >= 1",
+    "influence": {
+      "item.wood": 1,
+      "item.stone": 1
+    },
+    "actions": [
+      {
+        "title": "Explore the forest",
+        "requirement": "true",
+        "cost": {
+          "item.light": 10
+        },
+        "result": {
+          "item.territory": 0.01
+        }
+      },
+      {
+        "title": "Explore the land",
+        "requirement": "true",
+        "cost": {
+          "item.light": 400,
+          "item.tools": 10
+        },
+        "result": {
+          "item.territory": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "identify": "tools",
+    "name": "tools",
+    "icon": "🔨",
+    "description": "key to civilization",
+    "unlock": "game.item.stone > 0",
+    "actions": [
+      {
+        "title": "Make rough tools",
+        "requirement": "true",
+        "cost": {
+          "item.wood": 20,
+          "item.stone": 50
+        },
+        "result": {
+          "item.tools": 1
+        }
+      },
+      {
+        "title": "Make good tools",
+        "requirement": "true",
+        "cost": {
+          "item.wood": 5,
+          "item.metal": 10
+        },
+        "result": {
+          "item.tools": 40
+        }
+      }
+    ]
+  },
+  {
+    "identify": "raw_ore",
+    "name": "raw ore",
+    "icon": "☗",
+    "description": "smelt into metals",
+    "unlock": "game.item.raw_ore > 0",
+    "actions": [
+      {
+        "title": "",
+        "requirement": "",
+        "cost": {
+        },
+        "result": {
+        }
+      }
+    ]
+  },
+  {
+    "identify": "metal",
+    "name": "metal",
+    "icon": "⚓",
+    "description": "",
+    "unlock": "game.item.raw_ore > 0",
+    "actions": [
+      {
+        "title": "smelt ores",
+        "requirement": "true",
+        "cost": {
+          "item.raw_ore": 1,
+          "item.heat": 100
+        },
+        "result": {
+          "item.metal": 1
+        }
+      }
+    ]
+  },
+  {
+    "identify": "paper",
+    "name": "paper",
+    "icon": "📃",
+    "description": "",
+    "unlock": "game.research.writing",
+    "actions": [
+      {
+        "title": "make paper",
+        "requirement": "true",
+        "cost": {
+          "item.wood": 10
+        },
+        "result": {
+          "item.paper": 1
+        }
+      }
+    ]
+  },
+  {
+    "identify": "book",
+    "name": "book",
+    "icon": "📚",
+    "description": "record experiances",
+    "unlock": "game.item.paper > 0",
+    "actions": [
+      {
+        "title": "compile books",
+        "requirement": "game.item.paper > 0",
+        "cost": {
+          "item.paper": 10,
+          "item.knowledge": 1
+        },
+        "result": {
+          "item.book": 1
+        }
+      }
+    ],
+    "influence": {
+      "item.knowledge": 0.01
+    }
+  }
+]

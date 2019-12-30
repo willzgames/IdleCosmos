@@ -1,0 +1,78 @@
+[
+  {
+    "identify": "tamplate",
+    "name": "tamplate",
+    "require": "",
+    "effect": [
+      {
+        "item": "void",
+        "type": 1,
+        "sign": 1,
+        "ratio": 0.05
+      }
+    ]
+  },
+  {
+    "identify": "kiln",
+    "name": "kiln",
+    "require": "game.research.kiln",
+    "effect": [
+      {
+        "item": "heat",
+        "type": 1,
+        "sign": 1,
+        "ratio": 0.05
+      },
+      {
+        "item": "heat",
+        "type": 1,
+        "sign": 0,
+        "ratio": 0.1
+      },
+      {
+        "item": "fire",
+        "type": 1,
+        "sign": 0,
+        "ratio": 0.1
+      }
+    ]
+  },
+  {
+    "identify": "furnance",
+    "name": "furnance",
+    "require": "game.research.furnance",
+    "effect": [
+      {
+        "item": "heat",
+        "type": 1,
+        "sign": 1,
+        "ratio": 0.1
+      },
+      {
+        "item": "heat",
+        "type": 1,
+        "sign": 0,
+        "ratio": 0.2
+      },
+      {
+        "item": "fire",
+        "type": 1,
+        "sign": 0,
+        "ratio": 0.2
+      }
+    ]
+  },
+  {
+    "identify": "mythology",
+    "name": "mythology",
+    "require": "game.research.mythology",
+    "effect": [
+      {
+        "item": "knowledge",
+        "type": 1,
+        "sign": 1,
+        "ratio": 0.05
+      }
+    ]
+  }
+]

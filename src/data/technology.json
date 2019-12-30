@@ -1,0 +1,51 @@
+[
+  {
+    "identify": "tamplate",
+    "name": "",
+    "icon": "",
+    "description": "",
+    "unlock": "false",
+    "cost": {
+    }
+  },
+  {
+    "identify": "mythology",
+    "name": "Mythology",
+    "icon": "",
+    "description": "learn things better",
+    "unlock": "game.research.writing",
+    "cost": {
+      "item.knowledge": 2000
+    }
+  },
+  {
+    "identify": "furnance",
+    "name": "Furnance",
+    "icon": "",
+    "description": "better than kiln, keeps more heat",
+    "unlock": "game.research.kiln",
+    "cost": {
+      "item.knowledge": 500
+    }
+  },
+  {
+    "identify": "kiln",
+    "name": "Kiln",
+    "icon": "",
+    "description": "a thermally insulated chamber, keeps heat",
+    "unlock": "game.research.writing",
+    "cost": {
+      "item.knowledge": 200
+    }
+  },
+  {
+    "identify": "writing",
+    "name": "Written Language",
+    "icon": "",
+    "description": "This is an entrance to knowledge.",
+    "unlock": "game.item.story >= 2",
+    "cost": {
+      "item.light": 500
+    }
+  }
+]
